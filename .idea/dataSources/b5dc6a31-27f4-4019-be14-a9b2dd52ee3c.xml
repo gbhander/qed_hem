@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="hem_db.sqlite3">
+  <database-model serializer="dbm" rdbms="SQLITE" format-version="4.1">
+    <root id="1"/>
+    <schema id="2" parent="1" name="main">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <table id="3" parent="2" name="django_migrations"/>
+    <table id="4" parent="2" name="hem_app_category"/>
+    <table id="5" parent="2" name="hem_app_product"/>
+    <table id="6" parent="2" name="hem_app_productassignment"/>
+    <table id="7" parent="2" name="hem_app_runhistory"/>
+    <table id="8" parent="2" name="hem_app_runparams"/>
+    <table id="9" parent="2" name="sqlite_master"/>
+    <table id="10" parent="2" name="sqlite_sequence"/>
+    <column id="11" parent="3" name="id">
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="12" parent="3" name="app">
+      <Position>1</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="13" parent="3" name="name">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="14" parent="3" name="applied">
+      <Position>3</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="15" parent="3">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="16" parent="4" name="id">
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="17" parent="4" name="title">
+      <Position>1</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="18" parent="4" name="created_at">
+      <Position>2</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="19" parent="4" name="updated_at">
+      <Position>3</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="20" parent="4" name="description">
+      <Position>4</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="21" parent="4">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="22" parent="5" name="id">
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="23" parent="5" name="puc_id">
+      <Position>1</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="24" parent="5" name="category_id">
+      <Position>2</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="25" parent="5" name="product_type">
+      <Position>3</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="26" parent="5" name="product_type_refined">
+      <Position>4</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="27" parent="5" name="created_at">
+      <Position>5</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="28" parent="5" name="updated_at">
+      <Position>6</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="29" parent="5" name="group">
+      <Position>7</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="30" parent="5" name="assignment_id">
+      <Position>8</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="31" parent="5" name="sheds_id">
+      <Position>9</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="32" parent="5" name="sheds_product_category_id">
+      <Position>10</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="33" parent="5" name="description">
+      <Position>11</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="34" parent="5" name="hem_app_product_b583a629">
+      <ColNames>category_id</ColNames>
+    </index>
+    <index id="35" parent="5" name="hem_app_product_93c4899b">
+      <ColNames>assignment_id</ColNames>
+    </index>
+    <key id="36" parent="5">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="37" parent="5">
+      <ColNames>category_id</ColNames>
+      <RefTableName>hem_app_category</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="38" parent="5">
+      <ColNames>assignment_id</ColNames>
+      <RefTableName>hem_app_productassignment</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="39" parent="6" name="id">
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="40" parent="6" name="short_title">
+      <Position>1</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="41" parent="6" name="title">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="42" parent="6" name="created_at">
+      <Position>3</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="43" parent="6" name="updated_at">
+      <Position>4</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="44" parent="6">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="45" parent="7" name="id">
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="46" parent="7" name="products">
+      <Position>1</Position>
+      <DataType>bool|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="47" parent="7" name="gender">
+      <Position>2</Position>
+      <DataType>varchar(1)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="48" parent="7" name="population_size">
+      <Position>3</Position>
+      <DataType>integer unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="49" parent="7" name="min_age">
+      <Position>4</Position>
+      <DataType>smallint unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="50" parent="7" name="max_age">
+      <Position>5</Position>
+      <DataType>smallint unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="51" parent="7" name="created_at">
+      <Position>6</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="52" parent="7" name="updated_at">
+      <Position>7</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="53" parent="7" name="categories_id">
+      <Position>8</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="54" parent="7" name="hem_app_runhistory_09c55841">
+      <ColNames>categories_id</ColNames>
+    </index>
+    <key id="55" parent="7">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="56" parent="7">
+      <ColNames>categories_id</ColNames>
+      <RefTableName>hem_app_category</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="57" parent="8" name="id">
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="58" parent="8" name="ethnicity">
+      <Position>1</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="59" parent="8" name="gender">
+      <Position>2</Position>
+      <DataType>varchar(1)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="60" parent="8" name="min_age">
+      <Position>3</Position>
+      <DataType>smallint unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="61" parent="8" name="max_age">
+      <Position>4</Position>
+      <DataType>smallint unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="62" parent="8" name="pop_gen_seed">
+      <Position>5</Position>
+      <DataType>integer unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="63" parent="8" name="population_size">
+      <Position>6</Position>
+      <DataType>integer unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="64" parent="8" name="race">
+      <Position>7</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="65" parent="8" name="created_at">
+      <Position>8</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="66" parent="8" name="updated_at">
+      <Position>9</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="67" parent="8">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="68" parent="9" name="type">
+      <DataType>text|0</DataType>
+    </column>
+    <column id="69" parent="9" name="name">
+      <Position>1</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="70" parent="9" name="tbl_name">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="71" parent="9" name="rootpage">
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+    </column>
+    <column id="72" parent="9" name="sql">
+      <Position>4</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="73" parent="10" name="name">
+      <DataType>|0</DataType>
+    </column>
+    <column id="74" parent="10" name="seq">
+      <Position>1</Position>
+      <DataType>|0</DataType>
+    </column>
+  </database-model>
+</dataSource>
